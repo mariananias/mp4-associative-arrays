@@ -1,8 +1,8 @@
-package experiments;
+package src.experiments;
 
 import java.io.PrintWriter;
-import structures.AssociativeArray;
-import structures.KeyNotFoundException;
+import src.structures.AssociativeArray;
+import src.structures.KeyNotFoundException;
 
 /**
  * An extension of the AssociativeArray class that reports each
@@ -49,7 +49,11 @@ public class ReportingAssociativeArray<K,V> extends AssociativeArray<K,V> {
    */
   public void set(K key, V value) {
     pen.println(name + ".set(" + key + ", " + value + ")");
-    super.set(key, value);
+    try {
+      super.set(key, value);
+    } catch (Exception e) {
+      pen.println("  set failed because " + e.toString());
+    }
     pen.println("  " + name + ": " + this.toString());
   } // set (K,V)
 
