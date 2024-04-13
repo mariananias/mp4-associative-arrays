@@ -1,8 +1,14 @@
 Associative Arrays
 ==================
 
-Starter code for a project on associative arrays.
+* Course: CSC-207-01 Spring 2024
+* Date: February 21, 2024
 
-_Students should replace the contents of this file with appropriate
-contents, including author and date._
+* @author Marina Ananias
+* @author Samuel A. Rebelsky
 
+The purpose of this project is to build an associative array data structure.
+Applying knowledge of generics/parametric polymorphism and exception handling.
+
+Acknowledgements:
+* Evening Tutors (Diogo and Boston).
