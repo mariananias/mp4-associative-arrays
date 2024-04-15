@@ -1,7 +1,7 @@
-
 package src.structures;
 
 import static java.lang.reflect.Array.newInstance;
+import java.util.Arrays;
 
 /**
  * A basic implementation of Associative Arrays with keys of type K
@@ -59,6 +59,22 @@ public class AssociativeArray<K, V> {
    */
   public AssociativeArray<K, V> clone() {
     AssociativeArray<K, V> newAssociativeArray = new AssociativeArray<K, V>();
+
+    // Copy the size
+    newAssociativeArray.size = this.size;
+
+    // Copy the key/value pairs
+    newAssociativeArray.pairs = Arrays.copyOf(this.pairs, this.size);
+
+    // Make a copy of each KVPair
+    for (int i = 0; i < this.size; i++) {
+        KVPair<K, V> pair = this.pairs[i];
+        if (pair != null) {
+            // Make a new KVPair with the same key and value
+            newAssociativeArray.pairs[i] = new KVPair<>(pair.key, pair.value);
+        }
+    }
+
     return newAssociativeArray;
   } // clone()
 
@@ -259,3 +275,4 @@ public class AssociativeArray<K, V> {
   } // find(K)
 
 } // class AssociativeArray
+
